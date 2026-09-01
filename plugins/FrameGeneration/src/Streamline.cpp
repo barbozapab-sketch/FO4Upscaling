@@ -3,7 +3,7 @@
 
 void StreamlineFG::LoadInterposer()
 {
-	interposer = LoadLibrary(L"Data\\F4SE\\Plugins\\Streamline\\sl.interposer.dll");
+	interposer = LoadLibrary(L"Data\\F4SE\\Plugins\\FrameGeneration\\Streamline\\sl.interposer.dll");
 	if (!interposer) {
 		REX::WARN("[DLSSG] Failed to load interposer: {:#x}", GetLastError());
 		return;
@@ -27,8 +27,8 @@ bool StreamlineFG::InitStreamline()
 	REX::INFO("[DLSSG] Initializing Streamline");
 
 	// Pre-load plugin DLLs for MO2 USVFS compatibility
-	LoadLibrary(L"Data\\F4SE\\Plugins\\Streamline\\sl.common.dll");
-	LoadLibrary(L"Data\\F4SE\\Plugins\\Streamline\\sl.dlss_g.dll");
+	LoadLibrary(L"Data\\F4SE\\Plugins\\FrameGeneration\\Streamline\\sl.common.dll");
+	LoadLibrary(L"Data\\F4SE\\Plugins\\FrameGeneration\\Streamline\\sl.dlss_g.dll");
 
 	sl::Preferences pref{};
 	pref.showConsole = false;
